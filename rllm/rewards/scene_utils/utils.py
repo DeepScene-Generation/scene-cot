@@ -300,7 +300,7 @@ if __name__ == "__main__":
     import os
     
     # 读取场景图
-    scene_graph_path = "/wuhu_uni_ai/limingsheng/rllm/Assets/room_410/answer_json.json"
+    scene_graph_path = "/rllm/Assets/room_410/answer_json.json"
     
     
     with open(scene_graph_path, 'r') as f:
