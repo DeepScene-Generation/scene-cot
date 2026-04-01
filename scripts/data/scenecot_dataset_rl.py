@@ -39,7 +39,7 @@ def load_dataset(dataset_enum: Union[TrainDataset.Scene]) -> List[Dict[str, Any]
     data = []
     
     # 读取json文件
-    json_path = "/wuhu_uni_ai/limingsheng/rllm/data_rl/train/scenecot.json"
+    json_path = "/rllm/data_rl/train/scenecot.json"
     with open(json_path, 'r', encoding='utf-8') as f:
         json_data = json.load(f)
     
@@ -99,7 +99,7 @@ def make_map_fn(split: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process SCENECOT dataset')
-    parser.add_argument('--local_dir', default=os.path.expanduser('/wuhu_uni_ai/limingsheng/rllm/rllm/data'),
+    parser.add_argument('--local_dir', default=os.path.expanduser('/rllm/data'),
                        help='Local directory to save processed datasets')
     args = parser.parse_args()
 
