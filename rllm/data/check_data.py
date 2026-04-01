@@ -4,11 +4,11 @@
 
 # # 首先读取 parquet 文件
 # print("Reading parquet file...")
-# df = pd.read_parquet('/wuhu_uni_ai/limingsheng/rllm/rllm/data/train_scenecot.parquet')
+# df = pd.read_parquet('/rllm/rllm/data/train_scenecot.parquet')
 
 # # 加载tokenizer
 # print("Loading tokenizer...")
-# tokenizer = AutoTokenizer.from_pretrained('/wuhu_uni_ai/limingsheng/ckpt/Qwen/Qwen2.5-7B-Instruct', trust_remote_code=True)
+# tokenizer = AutoTokenizer.from_pretrained('/ckpt/Qwen/Qwen2.5-7B-Instruct', trust_remote_code=True)
 
 # # 初始化最大token数和对应的reason
 # max_tokens = 0
@@ -37,12 +37,12 @@
 # import os
 
 # # 添加rllm目录到Python路径
-# sys.path.append('/wuhu_uni_ai/limingsheng/rllm')
+# sys.path.append('/rllm')
 # from rllm.system_prompts import SCENECOT_SYSTEM_PROMPT
 
 # # 加载tokenizer
 # print("Loading tokenizer...")
-# tokenizer = AutoTokenizer.from_pretrained('/wuhu_uni_ai/limingsheng/ckpt/Qwen/Qwen2.5-7B-Instruct', trust_remote_code=True)
+# tokenizer = AutoTokenizer.from_pretrained('/ckpt/Qwen/Qwen2.5-7B-Instruct', trust_remote_code=True)
 
 # # 计算token数量
 # tokens = tokenizer(SCENECOT_SYSTEM_PROMPT, return_tensors='pt')
@@ -56,7 +56,7 @@
 import pandas as pd
 
 # 读取Parquet文件
-df = pd.read_parquet('/wuhu_uni_ai/limingsheng/rllm/rllm/data/train_scenecot_sft.parquet')
+df = pd.read_parquet('/rllm/rllm/data/train_scenecot_sft.parquet')
 
 # # 打印第一行数据
 # print("第一行数据：")
