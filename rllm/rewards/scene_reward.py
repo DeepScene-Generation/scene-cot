@@ -12,7 +12,7 @@ from scene_utils.utils import check_constraints, check_collisions
 from render_utils.render import render_blender
 import time
 import threading
-ASSETS_PATH = '/wuhu_uni_ai/limingsheng/rllm/Assets'
+ASSETS_PATH = '/rllm/Assets'
 import traceback
 client = OpenAI(
     api_key="xxx",
