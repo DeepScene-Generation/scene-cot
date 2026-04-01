@@ -25,7 +25,7 @@ from rllm.rewards.rl_reward import rllm_reward_fn
 
 def _select_rm_score_fn(data_source):
 
-    if data_source == '/wuhu_uni_ai/limingsheng/data/openai/gsm8k':
+    if data_source == '/data/openai/gsm8k':
         return gsm8k.compute_score
     elif data_source == 'lighteval/MATH':
         return math.compute_score
