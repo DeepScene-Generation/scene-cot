@@ -56,22 +56,22 @@ class Retrieval:
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
         meta = json.load(
-            open('/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/embeddings/objaverse_meta.json')
+            open('objaverse_meta.json')
         )
         self.meta = {x['u']: x for x in meta['entries']}
 
-        deser = torch.load('/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/embeddings/objaverse.pt')
+        deser = torch.load('objaverse.pt')
         self.us = deser['us']
         self.feats = deser['feats']
 
-        local_assets = pd.read_excel("/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/assets/copy.xlsx", skiprows=2)
+        local_assets = pd.read_excel("copy.xlsx", skiprows=2)
         captions = local_assets["caption_clip"].tolist()
 
         file_paths = []
         bbx_values = []
         for index, row in local_assets.iterrows():
             model_name = row['name_en']
-            model_path = os.path.join("/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/assets/lvm_2032fbx", f"{model_name}.fbx")
+            model_path = os.path.join("lvm_2032fbx", f"{model_name}.fbx")
             file_paths.append(model_path)
             bbx_values.append(row['bbx'])
 
@@ -85,17 +85,17 @@ class Retrieval:
         ]
 
         self.clip_model, self.clip_prep = transformers.CLIPModel.from_pretrained(
-            "/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/ckpts/CLIP-ViT-bigG-14-laion2B-39B-b160k",
+            "CLIP-ViT-bigG-14-laion2B-39B-b160k",
             low_cpu_mem_usage=True, torch_dtype=torch.float16,
             offload_state_dict=True,
-        ), transformers.CLIPProcessor.from_pretrained("/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/ckpts/CLIP-ViT-bigG-14-laion2B-39B-b160k")
+        ), transformers.CLIPProcessor.from_pretrained("CLIP-ViT-bigG-14-laion2B-39B-b160k")
         
         
         # # self.clip_model = self.clip_model.cpu()
         # self.clip_model = self.clip_model.to("cuda:7")
         # self.device = self.clip_model.device
 
-        self.local_embeddings = torch.load("/wuhu_uni_ai/limingsheng/ckpt/MSheng-Lee/code/embeddings/local.pt")
+        self.local_embeddings = torch.load("local.pt")
 
     def retrieve_assets(self, answer_json, room_name):
         
@@ -248,11 +248,11 @@ if __name__ == "__main__":
 
     retrieval = Retrieval()
     
-    answer_json = json.load(open("/wuhu_uni_ai/limingsheng/rllm/Assets_old/room_99/answer_json.json", "r"))
+    answer_json = json.load(open("rllm/Assets_old/room_99/answer_json.json", "r"))
     answer_json = retrieval.retrieve_assets(answer_json, "room_99")
 
     # from render import render_blender
     # render_blender(answer_json, "living_room")
 
-    # os.system(f'python /wuhu_uni_ai/limingsheng/rllm/utils/render.py --answer_json {answer_json} --room_name "living_room"')
+    # os.system(f'python /rllm/utils/render.py --answer_json {answer_json} --room_name "living_room"')
     
