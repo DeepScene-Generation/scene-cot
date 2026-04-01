@@ -272,7 +272,7 @@ def render_blender(answer_json, room_name):
 
 
 if __name__ == "__main__":
-    # answer_json = json.load(open('/wuhu_uni_ai/limingsheng/rllm/utils/A_bathroom_layout_with_a_modern_style_bathtub_and_a_separate_shower_set_with_a_contemporary_finish_/A_bathroom_layout_with_a_modern_style_bathtub_and_a_separate_shower_set_with_a_contemporary_finish_.json'))
+    # answer_json = json.load(open('/rllm/utils/A_bathroom_layout_with_a_modern_style_bathtub_and_a_separate_shower_set_with_a_contemporary_finish_/A_bathroom_layout_with_a_modern_style_bathtub_and_a_separate_shower_set_with_a_contemporary_finish_.json'))
     # room_name = "living_room"
 
     # render_blender(answer_json, room_name)
@@ -290,4 +290,4 @@ if __name__ == "__main__":
     render_blender(answer_json, args.room_name)
     # render_blender(json.load(open(args.answer_json, "r")), args.room_name)
 
-# python render.py --answer_json /wuhu_uni_ai/limingsheng/rllm/Assets_old/room_312/answer_json.json --room_name room_312
+# python render.py --answer_json /rllm/Assets_old/room_312/answer_json.json --room_name room_312
