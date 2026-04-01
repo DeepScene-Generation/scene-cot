@@ -1,5 +1,5 @@
-conda create -n nips_2025 python==3.10
-conda activate nips_2025
+conda create -n scene python==3.10
+conda activate scene
 pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu124 -i https://pypi.doubanio.com/simple/
 pip3 install flash-attn --no-build-isolation
 pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple/
