@@ -67,7 +67,7 @@ def make_map_fn(split: str):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process SCENECOT dataset')
-    parser.add_argument('--local_dir', default=os.path.expanduser('/wuhu_uni_ai/limingsheng/rllm/rllm/data'),
+    parser.add_argument('--local_dir', default=os.path.expanduser('/rllm/data'),
                        help='Local directory to save processed datasets')
     args = parser.parse_args()
 
