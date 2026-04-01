@@ -66,7 +66,7 @@ python3 -m verl.trainer.main_ppo \
     algorithm.mask_truncated_samples=True \
     trainer.critic_warmup=0 \
     trainer.logger=['console','wandb'] \
-    trainer.project_name='nips_2025' \
+    trainer.project_name='2026' \
     trainer.experiment_name='qwen-7b-3ep-rl' \
     +trainer.val_before_train=False \
     trainer.n_gpus_per_node=8 \
