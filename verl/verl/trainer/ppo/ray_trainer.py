@@ -406,8 +406,8 @@ class RayPPOTrainer(object):
             self.config.critic.optim.total_training_steps = total_training_steps
 
     def _validate(self):
-        if os.path.exists("/wuhu_uni_ai/limingsheng/rllm/Assets"):
-            os.system("rm -rf /wuhu_uni_ai/limingsheng/rllm/Assets")
+        if os.path.exists("/rllm/Assets"):
+            os.system("rm -rf /rllm/Assets")
         reward_tensor_lst = []
         data_source_lst = []
         for test_data in self.val_dataloader:
@@ -602,8 +602,8 @@ class RayPPOTrainer(object):
         self.global_steps += 1
 
         for _ in range(self.config.trainer.total_epochs):
-            if os.path.exists("/wuhu_uni_ai/limingsheng/rllm/Assets"):
-                os.system("rm -rf /wuhu_uni_ai/limingsheng/rllm/Assets")
+            if os.path.exists("/rllm/Assets"):
+                os.system("rm -rf /rllm/Assets")
             
             for batch_dict in self.train_dataloader:
                 batch: DataProto = DataProto.from_single_dict(batch_dict)
