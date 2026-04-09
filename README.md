@@ -15,6 +15,8 @@ bash scripts/deepscenegen/deepscenegen_qwen_instruct_7b_12k_grpo_3ep.sh
 
 Each scene in **test_scenecot** is manually inspected and refined to ensure spatial accuracy and semantic coherence. **test_scenecot** contains eight room types, including bedrooms, living rooms, dining rooms, studies, and more, with approximately six samples per category.
 
+**3dfront_aug** contains 13,484 samples with complete reasoning traces enhanced from the 3D-FRONT dataset using our IndoorScene-CoT method.
+
 ### License
 Our dataset is under the CC-BY-NC-SA-4.0 license.
 
